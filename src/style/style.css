@@ -1,0 +1,110 @@
+
+/* << general styling */
+/* custom font */
+@font-face {
+    font-family: 'TitleFont'; 
+    src: url('/huepfburg/fonts/santa/Our Santa.otf');
+}
+* {
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+li {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.highlight {
+    background-color: rgba(236, 55, 55, 0.877);
+    color: rgb(255, 224, 224);
+    padding: 0 4px 0 3px;
+    border-radius: 10px;
+    border: rgba(0, 0, 0, 0) 1px solid;
+}
+.highlight:hover{
+    background-color: rgb(255, 224, 224);
+    border: black solid 1px;
+    color: rgba(236, 55, 55, 0.877);
+}
+body{
+    height: 500vh;
+}
+/* >> general styling*/
+
+
+/* header styling */
+header {
+    /* if on mobile, change*/
+    max-height: 30vh;
+    width: 100%;
+    position: fixed;
+    /*background-color: rgba(117, 108, 108, 0.246);*/
+    border-bottom-color: rgba(0, 0, 0, 0.938);
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+header nav{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: "TitleFont";
+    max-height: 100vh;
+}
+/* title left of nav */
+header nav .nav_title {
+    display: inline-block;
+    margin: 3vw 7% 3vw -10vw;
+    max-width: 50%;
+    font-size: 7vh;
+    cursor: default;
+}
+header nav .nav_title:hover{
+    transform: scale(1.2);
+    color: rgba(241, 25, 25, 0.746);
+}
+
+/* actual nav */
+header nav ul{
+    display: inline-flex;
+    flex-direction: row;
+    margin: 3vw 3vw 3vw 7%;
+
+}
+header nav ul li{
+    /* some of this already styled in general styling */
+    margin: 0 4% 0 4%;
+    font-size: 4vh;
+    transition: 500ms;
+    position: relative;
+}
+header nav ul li:hover{
+    color: rgba(0, 0, 0, 0.74);
+}
+header nav ul li:after{
+    position: absolute;
+    content: "";
+    width: 70%;
+    height: 3px;
+    top: 100%;
+    left: 15%;
+    background: #ff7000;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+header nav ul li:hover:after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+header nav ul li.highlight:hover:after{
+    content: none;
+}
+header nav ul li.highlight:after{
+    content: none;
+}
+
+/* end of header styling */
