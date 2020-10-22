@@ -10,23 +10,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- page display info & styling -->
         <title>Die Hüpfburg !</title>
+        <!-- load external stored css style -->
         <link rel="stylesheet" type="text/css" href="/huepfburg/style/style.css">
-        <link rel="shortcut icon" type="image/x-icon" href="/huepfburg/img/icon/hburg_icon.ico">
+        <!-- load external stored javascript -->
         <script src="/huepfburg/scripts/script.js"></script> 
+        <!-- load website icon -->
+        <link rel="shortcut icon" type="image/x-icon" href="/huepfburg/img/icon/hburg_icon.ico">
     </head>
 
     <!-- script temporarly stored here -->
     <script>
-        resizeNavOnScroll();
+        // parameters = pixelscroll, id of nav to change
+        resizeNavOnScroll(100, "main_nav");
     </script>
 
     <!-- header will be shown on top with nav etc -->
 
     <header id="main_header">
         <nav id="main_nav">
-            <div class="nav_title"><h3>Die Hüpfburg</h3></div>
+            <div class="nav_title">
+                <img id="nav_gif_icon" src="/huepfburg/img/icon/hburg_turning_icon_nobg.gif" alt="yes">
+                <h3 id="nav_h3">Die Hüpfburg</h3>
+            </div>
             <ul>
-                <!-- removed the title="title" -->
+                <!-- edit: removed the title="" for it to be more clean -->
 
                 <li><a href="/huepfburg/index.php#" class="current_active">Home</a></li>
                 <!-- Channels, Themenchannels, Ränge, ... -->
@@ -36,14 +43,11 @@
                 <!-- Wie der Server moderiert wird (2 Owner usw) -->
                 <li><a href="/huepfburg/index.php#moderation" class="current_active">Moderation</a></li>
                 <!-- Link zum join-button, der aber immer highlighted sein wird-->
-                <li class="highlight"><a href="/huepfburg/index.php#join">Join</a></li>
+                <li id="nav_highlight"><a href="/huepfburg/index.php#join">Join</a></li>
 
             </ul>
         </nav>
     </header>
-    <body>
-        
-    </body>
     <!--
         Rest of the Code in the index.php
     -->
