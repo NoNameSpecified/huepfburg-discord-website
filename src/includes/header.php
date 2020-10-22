@@ -25,23 +25,25 @@
     </script>
 
     <!-- header will be shown on top with nav etc -->
-
+    <div id="page-top" style="position: 'absolute'; top: 0;"></div>
     <header id="main_header">
         <nav id="main_nav">
             <div class="nav_title">
                 <img id="nav_gif_icon" src="/huepfburg/img/icon/hburg_turning_icon_nobg.gif" alt="yes">
-                <h3 id="nav_h3">Die Hüpfburg</h3>
+                <h3 id="nav_h3"><a href="/huepfburg/index.php#page-top">Die Hüpfburg</a></h3>
             </div>
             <ul>
                 <!-- edit: removed the title="" for it to be more clean -->
+                <!-- edit 2: removed "home" link, as the h3 will be that link, adding "Aktuelles" insted -->
 
-                <li><a href="/huepfburg/index.php#" class="current_active">Home</a></li>
                 <!-- Channels, Themenchannels, Ränge, ... -->
                 <li><a href="/huepfburg/index.php#aufbau" class="current_active">Aufbau</a></li>
                 <!-- Entstehung, Geschichte bis jetzt -->
                 <li><a href="/huepfburg/index.php#geschichte" class="current_active">Geschichte</a></li>
                 <!-- Wie der Server moderiert wird (2 Owner usw) -->
                 <li><a href="/huepfburg/index.php#moderation" class="current_active">Moderation</a></li>
+                <!-- Aktuelles, was im Server vorgeht, news usw -->
+                <li><a href="/huepfburg/index.php#aktuelles" class="current_active">Aktuelles</a></li>
                 <!-- Link zum join-button, der aber immer highlighted sein wird-->
                 <li id="nav_highlight"><a href="/huepfburg/index.php#join">Join</a></li>
 
