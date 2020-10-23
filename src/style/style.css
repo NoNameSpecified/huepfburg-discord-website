@@ -43,8 +43,8 @@ header {
     width: 100%;
     position: fixed;
     /*background-color: rgba(117, 108, 108, 0.246);*/
-    border-bottom-color: rgba(0, 0, 0, 0.938);
-    border-bottom-width: 2px;
+    border-bottom-color: rgba(0, 0, 0, 1);
+    border-bottom-width: 0.3vh;
     border-bottom-style: solid;
 }
 header nav{
@@ -55,13 +55,15 @@ header nav{
     align-items: center;
     font-family: "overpass";
     max-height: 30vh;
+    position: relative;
 }
 /* title left of nav */
 header nav .nav_title {
-    display: inline-block;
-    margin: 2vw 7% 1vw -5vw;
+    display: inline-flex;
+    margin: 4vh 5vw 1vw -5vw;
+    align-items: center;
     max-width: 50%;
-    font-size: 5vh;
+    font-size: 2.5vw;
     /*cursor: default;
     -- edited : now will link to top, removing "home" button
     and adding another one in replacement */
@@ -75,12 +77,13 @@ header nav .nav_title h3:hover{
     border-radius: 30px;*/
 }
 header nav .nav_title img{
-    max-width: 10vh;
+    max-height: 8vh;
+    max-width: 6.5vw;
     position: absolute;
     /*where it will be placed : left: -35%;
     hidden at first : */
-    left: -200vh;
-    top: -10%;
+    left: -130vw;
+    top: -1vh;
     /*display: none;*/
     transition: 1s;
     pointer-events: none;
@@ -90,27 +93,24 @@ header nav .nav_title img{
 header nav ul{
     display: inline-flex;
     flex-direction: row;
-    margin: 1.5vw 1vw 1vw 7%;
-
+    margin: 3vh 1vw 1vw 7%;
+    align-items: center;
 }
 header nav ul li{
     /* some of this already styled in general styling */
     margin: 0 4% 0 4%;
-    font-size: 3.5vh;
+    font-size: 1.75vw;
     transition: 0.1s;
     position: relative;
-}
-header nav ul li:hover{
-    color: rgba(0, 0, 0, 0.74);
 }
 header nav ul li:after{
     position: absolute;
     content: "";
     width: 70%;
-    height: 3px;
+    height: 0.4vh;
     top: 100%;
     left: 15%;
-    background: #ff7000;
+    background: rgb(115, 138, 219);
     transition: transform 0.5s;
     transform: scaleX(0);
     transform-origin: right;
@@ -123,10 +123,11 @@ header nav ul li:hover:after{
     background-color: rgba(236, 55, 55, 0.685);
     color: rgba(230, 197, 197, 0.877);
     padding: 4px 4px 0 3px;
-    border-radius: 10px;
+    border-radius: 1vh;
     transition: color 0.6s;
     transition: background-color 0.6s;
     transition: transform 0.4s;
+    box-shadow: 0.3vh 0.5vh 0.3vh rgba(236, 55, 55, 0.5);
 }
 #nav_highlight:hover{
     background-color: rgba(236, 55, 55, 0.877);
@@ -134,8 +135,7 @@ header nav ul li:hover:after{
     transition: color 0.6s;
     transition: background-color 0.8s;
     transition: transform 0.4s;
-    transform: translateY(-0.2vh);
-    
+    transform: translateY(-0.4vh);
 }
 /* dont do the underline thing for highlight */
 header nav ul li#nav_highlight:hover:after{
@@ -158,25 +158,27 @@ header nav ul li#nav_highlight:after{
     background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%); */
 
     background-image: url("../img/showcase/discord_logo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
 }
 #showcase #showcase_title{
     position: relative;
     display: inline-block;
-    top: 50%;
+    top: 50vh;
     left: 10%;
-    color: rgb(245, 222, 179);
+    color: rgba(245, 245, 245, 0.89);
+    background-color: rgba(24, 23, 23, 0.835);
+    padding: 1vw;
 }
 #showcase #showcase_title h1{
-    font-size: 12vh;
+    font-size: 6vw;
     max-width: 50vw;
     font-family: "simplifica";
 }
-#showcase #showcase_title h1 #dark{
-    font-family: inherit;
-    color: rgb(46, 44, 42);
-}
 #showcase #showcase_title img{
-    width: 10vh;
+    width: 6vw;
     height: auto;
     display: inline;
     position: absolute;
