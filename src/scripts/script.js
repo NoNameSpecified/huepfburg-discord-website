@@ -13,6 +13,7 @@ function resizeNavOnScroll(wishedTrigger, nav_id){
         var header_highlight = document.getElementById("nav_highlight");
 
         var smoked_white = "rgba(245, 242, 242, 0.90)";
+        var nav_first_color = "rgb(245, 222, 179)"
 
         // console.log(window.scrollY); only for debug purposes
 
@@ -60,9 +61,9 @@ function resizeNavOnScroll(wishedTrigger, nav_id){
             header_nav.style.backgroundColor = "rgba(0, 0, 0, 0)"; // color doesnt matter, just make it transparent (last 0)
             
             // change hover color of title back to usual on white bg
-            header_title.style.color = "black";
+            header_title.style.color = nav_first_color;
             header_title.onmouseenter = function(){ header_title.style.color = "rgba(0, 0, 0, 0.705)";}
-            header_title.onmouseleave = function(){ header_title.style.color = "black";}
+            header_title.onmouseleave = function(){ header_title.style.color = nav_first_color;}
             // change highlight hover style back to usual
             header_highlight.onmouseenter = function(){ 
                 header_highlight.style.backgroundColor = "rgba(236, 55, 55, 0.877)";
@@ -77,7 +78,7 @@ function resizeNavOnScroll(wishedTrigger, nav_id){
                 header_nav_li_list[i].style.fontSize = "3.5vh";
                 // the "join" button, which is always the last one, remains untouched
                 if (i != num_of_li-1){
-                header_nav_li_list[i].style.color = "black";
+                header_nav_li_list[i].style.color = nav_first_color;
                 }
             }
 

@@ -3,11 +3,11 @@
 /* custom font */
 @font-face {
     font-family: 'simplifica'; 
-    src: url('/huepfburg/fonts/simplifica/SIMPLIFICA Typeface.ttf');
+    src: url('../fonts/simplifica/SIMPLIFICA Typeface.ttf');
 }
 @font-face {
     font-family: 'overpass'; 
-    src: url('/huepfburg/fonts/overpass/overpass/overpass-regular.otf');
+    src: url('../fonts/overpass/overpass/overpass-regular.otf');
 }
 
 * {
@@ -29,7 +29,7 @@ a {
 
 .coming_soon{
     height: 500vh;
-    background-image: url("/huepfburg/img/coming_soon.jpg");
+    background-image: url("../img/coming_soon.jpg");
     background-size: contain;
 }
 /* >> general styling*/
@@ -48,6 +48,7 @@ header {
     border-bottom-style: solid;
 }
 header nav{
+    color: rgb(245, 222, 179);
     display: flex;
     width: 100%;
     justify-content: center;
@@ -152,20 +153,27 @@ header nav ul li#nav_highlight:after{
     position: relative;
     height: 100vh;
     /*background-color: rgba(30, 103, 221, 0.637);
-    bg-gradient from https://www.eggradients.com/category/blue-gradient */
-    background-color: #36096d;
-    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+    bg-gradient from https://www.eggradients.com/category/blue-gradient 
+    background-color: #ff4e00; 
+    background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%); */
+
+    background-image: url("../img/showcase/discord_logo.png");
 }
 #showcase #showcase_title{
-    position: sticky;
+    position: relative;
     display: inline-block;
-    top: 40%;
-    left: 15%;
+    top: 50%;
+    left: 10%;
+    color: rgb(245, 222, 179);
 }
 #showcase #showcase_title h1{
     font-size: 12vh;
     max-width: 50vw;
     font-family: "simplifica";
+}
+#showcase #showcase_title h1 #dark{
+    font-family: inherit;
+    color: rgb(46, 44, 42);
 }
 #showcase #showcase_title img{
     width: 10vh;
