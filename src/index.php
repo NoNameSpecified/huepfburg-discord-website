@@ -17,7 +17,7 @@
     <!-- Showcase, landing view -->
     <div id="showcase">
         <div id="showcase_title">
-            <h1 id="showcase_h1">Der Hüpfburg Ser<span id="dark">ver</span><br>auf Discord!</h1>
+            <h1 id="showcase_h1">Der Hüpfburg Server<br>auf Discord!</h1>
             <img src="img/showcase/stitch_stars_emoji.png" alt="EMOJI" id="stitch_stars_emoji">
         </div>
     </div>
