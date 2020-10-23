@@ -20,7 +20,7 @@ function resizeNavOnScroll(wishedTrigger, nav_id){
         if ( (window.scrollY) >= wishedTrigger) {
             header_nav.style.transition = "0.5s";
             header_nav.style.maxHeight = "10vh";
-            header_nav.style.backgroundColor = "rgb(36, 37, 42)";
+            header_nav.style.backgroundColor = "rgb(36, 37, 42, 0.99)";
             
             // change hover color of title, as else it looks weird on dark background
             header_title.style.color = smoked_white;
@@ -44,7 +44,7 @@ function resizeNavOnScroll(wishedTrigger, nav_id){
             }
 
             for (i = 0; i < num_of_li; i++){
-                header_nav_li_list[i].style.fontSize = "2.5vh";
+                header_nav_li_list[i].style.fontSize = "1.5vw";
                 // the "join" button, which is always the last one, remains untouched
                 if (i != num_of_li-1){
                     header_nav_li_list[i].style.color = smoked_white;
@@ -52,7 +52,7 @@ function resizeNavOnScroll(wishedTrigger, nav_id){
             }
 
             // slide icon next to the nav title
-            document.getElementById("nav_gif_icon").style.left = "-35%";
+            document.getElementById("nav_gif_icon").style.left = "-7vw";
 
         }else{
             // set back to the default, definded in style.css
@@ -75,7 +75,7 @@ function resizeNavOnScroll(wishedTrigger, nav_id){
             }
 
             for (i = 0; i < num_of_li; i++){
-                header_nav_li_list[i].style.fontSize = "3.5vh";
+                header_nav_li_list[i].style.fontSize = "1.75vw";
                 // the "join" button, which is always the last one, remains untouched
                 if (i != num_of_li-1){
                 header_nav_li_list[i].style.color = nav_first_color;
