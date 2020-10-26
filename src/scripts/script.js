@@ -89,3 +89,90 @@ function resizeNavOnScroll(wishedTrigger, nav_id){
     }
     
 }
+
+
+// for the aufbau_section, clicking a div expands the collapsed and shows content
+function showCollapsed() {
+
+    // this bit is really important as we need to wait for the page
+    // to be fully loaded, else this executes before DOM is loaded 
+    window.onload = function(){
+
+        var rollen_div = document.getElementById("rollen");
+        var channels_div = document.getElementById("channels");
+        var rang_div = document.getElementById("rang");
+
+        // first time for "Die Rollen"
+
+        var banner_to_click = document.getElementById("top_span_rollen");
+        // when clicking that "banner", execute : 
+        banner_to_click.addEventListener("click", function(){
+            // get the div we want to show later
+            var content = document.getElementById("content_collapsed_rollen");
+            // if we are still collapsed
+            if ( content.className == "content collapsed" ) {
+                // remove the class "collapsed", add the class "flow"
+                content.className = "content flow";
+                // change padding, space in between would be too big else
+                channels_div.style.padding = "2vh 20% 5vh 20%";
+                
+                // change the button from a + to a - sign
+                document.getElementById("expand_button_rollen").src = 'img/section_aufbau/reduce_button.png';
+            // if we are not collapsed and content is shown
+            } else {
+                
+                // remove flow class, add collapsed again
+                content.className = "content collapsed";
+                // reset padding
+                channels_div.style.padding = "5vh 20%";
+                // takes roughly 0.8s to move all the stuff
+                // the - to + img change should happen last,
+                // thus, timeout
+                setTimeout(function(){
+                    document.getElementById("expand_button_rollen").src = 'img/section_aufbau/expand_button.png';
+                },1);
+            }
+        });
+
+
+        /* working as defined above, use those comments */
+
+        // second Time for "Die Channels"
+        var banner_to_click = document.getElementById("top_span_channels");
+        banner_to_click.addEventListener("click", function(){
+            var content = document.getElementById("content_collapsed_channels");
+
+            if ( content.className == "content collapsed" ) {
+                content.className = "content flow";
+                rang_div.style.padding = "2vh 20% 5vh 20%";
+                document.getElementById("expand_button_channels").src = 'img/section_aufbau/reduce_button.png';
+            } else {
+                content.className = "content collapsed";
+                rang_div.style.padding = "5vh 20%";
+                setTimeout(function(){
+                    document.getElementById("expand_button_channels").src = 'img/section_aufbau/expand_button.png';
+                },1);
+            }
+        });
+
+
+        // third time for "Das Rang-System"
+        var banner_to_click = document.getElementById("top_span_rang");
+        banner_to_click.addEventListener("click", function(){
+            var content = document.getElementById("content_collapsed_rang");
+
+            if ( content.className == "content collapsed" ) {
+                content.className = "content flow";
+                rang_div.style.padding = "5vh 20% 2vh 20%";
+                document.getElementById("expand_button_rang").src = 'img/section_aufbau/reduce_button.png';
+            } else {
+                content.className = "content collapsed";
+                rang_div.style.padding = "5vh 20%";
+                setTimeout(function(){
+                    document.getElementById("expand_button_rang").src = 'img/section_aufbau/expand_button.png';
+                },1);
+            }
+        });
+
+    }
+}

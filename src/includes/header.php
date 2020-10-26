@@ -22,6 +22,7 @@
     <script>
         // parameters = pixelscroll, id of nav to change
         resizeNavOnScroll(100, "main_nav");
+        showCollapsed();
     </script>
 
     <!-- header will be shown on top with nav etc -->
@@ -37,7 +38,7 @@
                 <!-- edit 2: removed "home" link, as the h3 will be that link, adding "Aktuelles" insted -->
 
                 <!-- Channels, Themenchannels, Ränge, ... -->
-                <li><a href="#aufbau" class="current_active">Aufbau</a></li>
+                <li><a href="#struktur_link" class="current_active">Struktur</a></li>
                 <!-- Entstehung, Geschichte bis jetzt -->
                 <li><a href="#geschichte" class="current_active">Geschichte</a></li>
                 <!-- Wie der Server moderiert wird (2 Owner usw) -->

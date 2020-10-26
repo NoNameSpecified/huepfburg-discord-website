@@ -1,5 +1,8 @@
 
 /* << general styling */
+:root{
+    /* not used for now */
+}
 /* custom font */
 @font-face {
     font-family: 'simplifica'; 
@@ -19,12 +22,18 @@
 html{
     scroll-behavior: smooth;
 }
+body{
+    background-color: #201c29;
+}
 li {
     list-style: none;
 }
 a {
     color: inherit;
     text-decoration: none;
+}
+img:not(.expand_button){
+    pointer-events: none;
 }
 
 .coming_soon{
@@ -37,7 +46,7 @@ a {
 
 /* << header styling */
 header {
-    z-index: 2;
+    z-index: 99;
     /* if on mobile, change*/
     max-height: 30vh;
     width: 100%;
@@ -188,3 +197,137 @@ header nav ul li#nav_highlight:after{
 }
 
 /* >> showcase styling */
+
+
+
+
+/* << aufbau styling */
+#aufbau{
+    max-width: 100vw;
+    position: relative;
+    min-height: 90vh;
+    /* moved to body{} 
+    background-color: #201c29; */
+    color: rgba(251, 251, 251, 0.705);
+    z-index: 2;
+}
+#aufbau h3#aufbau_title{
+    padding: 4vh 1vw 0 1vw;
+    font-size: 4vw;
+    text-align: center;
+    color: white;
+}
+#aufbau .collapse_div{
+    position: relative;
+    display: block;
+    padding: 5vh 20%;
+}
+/* 1st one a bit more tho */
+#aufbau .collapse_div#rollen{
+    padding-top: 8vh;
+}
+#aufbau .top_span{
+    cursor: pointer;
+    border-top: 2px gray solid;
+    border-bottom: 2px gray solid;
+    position: relative;
+    padding: 2% 0 2% 0;
+}
+#aufbau .collapse_div .top_span h3{
+    font-size: 1.5vw;
+    top: 50%;
+    transition: 0.3s;
+}
+#aufbau .collapse_div .top_span:hover > h3{
+    transition: 0.3s;
+    color: rgb(255, 255, 255);
+}
+#aufbau .collapse_div .top_span img{
+    box-sizing: border-box;
+    position: absolute;
+    width: 2.6vw;
+    right: 0%;
+    top: 20%;
+    opacity: 0.7;
+}
+#aufbau .collapse_div .top_span:hover > img{
+    opacity: 1;
+}
+#aufbau .collapse_div .content{
+    /* hide at first o.o */
+    overflow: hidden;
+    /* general styling */
+    line-height: 150%;
+    font-size: 1.1vw;
+    background-color: rgba(255, 255, 255, 0.76);
+    border-radius: 10px;
+    color: black;
+    margin-top: 1rem;
+    
+}
+/* changes when clicking expand */
+#aufbau .collapse_div .content.collapsed{
+    max-height: 00vh;
+    transition: 0s;
+}
+#aufbau .collapse_div .content.flow{
+    max-height: 100vh;
+    transition: 0s;
+    padding: 2.5vw;
+    padding-bottom: 3vh;
+}
+#aufbau #rollen, #aufbau #channels, #aufbau #rang{
+    transition: padding 0.2s;
+}
+
+/* ok done with the expand-reduce div managment */ 
+#aufbau #rollen{
+    position: relative;
+}
+#aufbau #rollen .content p{
+    text-align: justify;
+}
+#aufbau #rollen .content img{
+    float: right;
+    width: 25vw;
+    margin: 0.5vw; 
+    margin-left: 1.5vw;
+}
+
+#aufbau #channels{
+    position: relative;
+}
+#aufbau #channels ul h3{
+    padding-bottom: 1vh;
+}
+/* to get the 3 first left, the rest normal */
+#aufbau #channels ul li:nth-child(-n+3){
+    max-width: 50%;
+}
+#aufbau #channels .content img{
+    margin-top: -12vh;
+    width: 22vw;
+    padding-left: 1vw;
+    float: right;
+}
+
+#aufbau #rang{
+    position: relative;
+}
+#aufbau #rang .content p{
+    max-width: 65%;
+    float: left;
+}
+#aufbau #rang .content img{
+    float: right;
+    margin-top: 10vh;
+    margin-bottom: auto;
+    width: 15vw;
+}
+
+
+/* >> aufbau styling */
+
+
+
+/**/
