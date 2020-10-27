@@ -12,18 +12,24 @@
     font-family: 'overpass'; 
     src: url('../fonts/overpass/overpass/overpass-regular.otf');
 }
+@font-face {
+    font-family: 'old_type'; 
+    src: url('../fonts/old/rm_typerighter.ttf');
+}
 
 * {
     margin: 0;
     box-sizing: border-box;
     transition: 0.5s;
-    font-family: "overpass";
 }
 html{
     scroll-behavior: smooth;
 }
 body{
     background-color: #201c29;
+}
+body *{
+    font-family: "overpass";
 }
 li {
     list-style: none;
@@ -37,7 +43,7 @@ img:not(.expand_button){
 }
 
 .coming_soon{
-    height: 500vh;
+    height: 300vh;
     background-image: url("../img/coming_soon.jpg");
     background-size: contain;
 }
@@ -131,7 +137,7 @@ header nav ul li:hover:after{
 #nav_highlight {
     background-color: rgba(236, 55, 55, 0.685);
     color: rgba(230, 197, 197, 0.877);
-    padding: 4px 4px 0 3px;
+    padding: 0.3vw 0.4vw 0 0.3vw;
     border-radius: 1vh;
     transition: color 0.6s;
     transition: background-color 0.6s;
@@ -171,6 +177,7 @@ header nav ul li#nav_highlight:after{
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: center;
+    background-attachment: fixed;
 }
 #showcase #showcase_title{
     position: relative;
@@ -217,6 +224,7 @@ header nav ul li#nav_highlight:after{
     text-align: center;
     color: white;
 }
+/* ## styling div basics */
 #aufbau .collapse_div{
     position: relative;
     display: block;
@@ -226,10 +234,11 @@ header nav ul li#nav_highlight:after{
 #aufbau .collapse_div#rollen{
     padding-top: 8vh;
 }
+/* ## styling expand/reduce span */
 #aufbau .top_span{
     cursor: pointer;
-    border-top: 2px gray solid;
-    border-bottom: 2px gray solid;
+    border-top: 0.5vh gray solid;
+    border-bottom: 0.5vh gray solid;
     position: relative;
     padding: 2% 0 2% 0;
 }
@@ -253,11 +262,12 @@ header nav ul li#nav_highlight:after{
 #aufbau .collapse_div .top_span:hover > img{
     opacity: 1;
 }
+/* ## styling actual content div bascis */
 #aufbau .collapse_div .content{
     /* hide at first o.o */
     overflow: hidden;
     /* general styling */
-    line-height: 150%;
+    line-height: 164%;
     font-size: 1.1vw;
     background-color: rgba(255, 255, 255, 0.76);
     border-radius: 10px;
@@ -280,7 +290,7 @@ header nav ul li#nav_highlight:after{
     transition: padding 0.2s;
 }
 
-/* ok done with the expand-reduce div managment */ 
+/* styling the 3 specific containers */ 
 #aufbau #rollen{
     position: relative;
 }
@@ -299,35 +309,126 @@ header nav ul li#nav_highlight:after{
 }
 #aufbau #channels ul h3{
     padding-bottom: 1vh;
+    margin-left: 0;
 }
-/* to get the 3 first left, the rest normal */
+#aufbau #channels ul{
+    padding: 0;
+}
+/* to get the 3 first left, the rest normal 
 #aufbau #channels ul li:nth-child(-n+3){
-    max-width: 50%;
-}
+}*/
 #aufbau #channels .content img{
-    margin-top: -12vh;
+    margin: 0.5vw 1.8vw 1.8vw 0.5vw; 
     width: 22vw;
-    padding-left: 1vw;
-    float: right;
+    float: left;
 }
 
 #aufbau #rang{
     position: relative;
 }
 #aufbau #rang .content p{
-    max-width: 65%;
-    float: left;
+    text-align: justify;
 }
 #aufbau #rang .content img{
     float: right;
-    margin-top: 10vh;
-    margin-bottom: auto;
     width: 15vw;
+    margin: 0.5vw 0.5vw 1.8vw 1.8vw; 
 }
-
-
 /* >> aufbau styling */
 
 
 
-/**/
+
+/* >> wrapper styling */
+hr#hr_middle{
+    height: 0.2vh;
+    background-color: rgba(204, 203, 203, 0.671);
+    border: none;
+    width: 90%;
+    margin: auto auto auto auto;
+}
+#combo_wrapper{
+    position: relative;
+    font-family: "old_type" !important;
+}
+#combo_wrapper h3.wrapper_part_title{ 
+    text-align: center;
+    font-size: 2vw;
+    position: relative;
+}
+#inside_wrapper{
+    background-color: rgba(255, 255, 255, 0.76);
+    color: rgb(34, 32, 32);
+    position: relative;
+    margin: 1vh 10vw;
+    padding: 5vh 5vw;
+    min-height: 90vh;
+    border-radius: 20px;
+}
+/* >> geschichte styling */
+#geschichte .geschichte_content .inside_content .inner_content_content{
+    text-align: left;
+    padding: 2.5vh 0;
+    font-size: 1.1vw;
+    line-height: 180%;
+} 
+#geschichte .geschichte_content .inside_content .inner_content_content p{
+    font-family: "old_type" !important;
+}
+#geschichte .geschichte_content .inside_content .inner_content_content h3{
+    text-decoration: underline;
+}
+/* >> geschichte styling */
+
+/* << moderation styling */
+#moderation{
+    position: relative;
+}
+h3#moderation_title{
+    padding-top: 5vh;
+    padding-bottom: 4vh;
+}
+#moderation .moderation_content{
+    line-height: 180%;
+    width: 100%;
+    height: 30vh;
+}
+#moderation .moderation_content .inner_content{
+    border-color: red;
+    border-width: 0.3vh;
+    border-radius: 2vh;
+    border-style: solid;
+    width: 40%;
+    position: absolute;
+    padding: 1vw;
+}
+#moderation .moderation_content .inner_content h3{
+    /* nice highlighter effect thanks to https://stackoverflow.com/questions/33451683/pen-highlighter-effect-in-css ! */ 
+    color: rgb(51, 50, 50);
+    font-weight: bolder;
+    background: linear-gradient(104deg, rgba(130, 255, 173,0) 0.9%, rgba(130, 255, 173,1.25) 2.4%, rgba(130, 255, 173,0.5) 5.8%, rgba(130, 255, 173,0.1) 93%, rgba(130, 255, 173,0.7) 96%, rgba(130, 255, 1732,0) 98%), linear-gradient(183deg, rgba(130, 255, 173,0) 0%, rgba(130, 255, 173,0.3) 7.9%, rgba(130, 255, 173,0) 15%);
+    padding: 1.3vh 0.7vw;
+    border-radius: 3vh;
+    width: 7vw;
+    text-shadow: -12px 12px 9.8px rgba(130, 255, 174, 0.781), 21px -18.1px 7.3px rgba(255, 255, 255,1), -18.1px -27.3px 30px rgba(255, 255, 255,1);
+}
+#moderation .moderation_content img{
+    position: absolute;
+    max-height: 30vh;
+}
+#moderation .moderation_content#owner .inner_content{
+    left: 20vw;
+    top: 20vh;
+}
+#moderation .moderation_content#owner img{
+    top: 15vh;
+    left: 0;
+}
+#moderation .moderation_content#mods .inner_content{
+    right: 23vw;
+    top: 50vh;
+}
+#moderation .moderation_content#mods img{
+    top: 35vh;
+    right: 0;
+}

@@ -40,13 +40,13 @@
                 <!-- Channels, Themenchannels, Ränge, ... -->
                 <li><a href="#struktur_link" class="current_active">Struktur</a></li>
                 <!-- Entstehung, Geschichte bis jetzt -->
-                <li><a href="#geschichte" class="current_active">Geschichte</a></li>
+                <li><a href="#geschichte_link" class="current_active">Geschichte</a></li>
                 <!-- Wie der Server moderiert wird (2 Owner usw) -->
-                <li><a href="#moderation" class="current_active">Moderation</a></li>
+                <li><a href="#moderation_link" class="current_active">Moderation</a></li>
                 <!-- Aktuelles, was im Server vorgeht, news usw -->
-                <li><a href="#aktuelles" class="current_active">Aktuelles</a></li>
+                <li><a href="#aktuelles_link" class="current_active">Aktuelles</a></li>
                 <!-- Link zum join-button, der aber immer highlighted sein wird-->
-                <li id="nav_highlight"><a href="#join">Join</a></li>
+                <li id="nav_highlight"><a href="#join_link">Join!</a></li>
 
             </ul>
         </nav>
