@@ -12,10 +12,10 @@
     font-family: 'overpass'; 
     src: url('../fonts/overpass/overpass/overpass-regular.otf');
 }
-@font-face {
+/*@font-face {
     font-family: 'old_type'; 
     src: url('../fonts/old/rm_typerighter.ttf');
-}
+}*/
 
 * {
     margin: 0;
@@ -42,11 +42,6 @@ img:not(.expand_button){
     pointer-events: none;
 }
 
-.coming_soon{
-    height: 300vh;
-    background-image: url("../img/coming_soon.jpg");
-    background-size: contain;
-}
 /* >> general styling*/
 
 
@@ -59,7 +54,7 @@ header {
     position: fixed;
     /*background-color: rgba(117, 108, 108, 0.246);*/
     border-bottom-color: rgba(0, 0, 0, 1);
-    border-bottom-width: 0.3vh;
+    border-bottom-width: 0 0 0.3vh;
     border-bottom-style: solid;
 }
 header nav{
@@ -86,7 +81,7 @@ header nav .nav_title {
 }
 header nav .nav_title h3:hover{
     transform: scale(1.15);
-    color: rgba(0, 0, 0, 0.705);
+    color: rgb(255, 182, 193);
     /* to be determined
     background-color: rgb(241, 233, 221);
     border-radius: 30px;*/
@@ -275,13 +270,26 @@ header nav ul li#nav_highlight:after{
     margin-top: 1rem;
     
 }
+#aufbau .collapse_div .content span#channel_style{
+    border-radius: 3px;
+    padding: 0.3vw;
+    font-weight: 500;
+    unicode-bidi: -moz-plaintext;
+    unicode-bidi: plaintext;
+    color: #7289da;
+    background: rgba(114, 137, 218, 0.418);
+    position: relative;
+    /* prevent line-break of span */
+    white-space: nowrap;
+}
 /* changes when clicking expand */
 #aufbau .collapse_div .content.collapsed{
     max-height: 00vh;
     transition: 0s;
+    height: auto;
 }
 #aufbau .collapse_div .content.flow{
-    max-height: 100vh;
+    max-height: 300vh;
     transition: 0s;
     padding: 2.5vw;
     padding-bottom: 3vh;
@@ -328,6 +336,8 @@ header nav ul li#nav_highlight:after{
 }
 #aufbau #rang .content p{
     text-align: justify;
+    padding-top: 10%;
+    width: 60%;
 }
 #aufbau #rang .content img{
     float: right;
@@ -339,7 +349,7 @@ header nav ul li#nav_highlight:after{
 
 
 
-/* >> wrapper styling */
+/* << wrapper styling */
 hr#hr_middle{
     height: 0.2vh;
     background-color: rgba(204, 203, 203, 0.671);
@@ -354,7 +364,9 @@ hr#hr_middle{
 #combo_wrapper h3.wrapper_part_title{ 
     text-align: center;
     font-size: 2vw;
+    padding-top: 6vh;
     position: relative;
+    text-shadow: 0.3vh 0.3vh white;
 }
 #inside_wrapper{
     background-color: rgba(255, 255, 255, 0.76);
@@ -366,15 +378,16 @@ hr#hr_middle{
     border-radius: 20px;
 }
 /* >> geschichte styling */
+#geschichte{
+    width: 70%;
+    margin: 0 auto;
+}
 #geschichte .geschichte_content .inside_content .inner_content_content{
     text-align: left;
-    padding: 2.5vh 0;
-    font-size: 1.1vw;
+    padding: 5vh 0 15vh 0;
+    font-size: 1.3vw;
     line-height: 180%;
 } 
-#geschichte .geschichte_content .inside_content .inner_content_content p{
-    font-family: "old_type" !important;
-}
 #geschichte .geschichte_content .inside_content .inner_content_content h3{
     text-decoration: underline;
 }
@@ -389,46 +402,208 @@ h3#moderation_title{
     padding-bottom: 4vh;
 }
 #moderation .moderation_content{
-    line-height: 180%;
+    line-height: 3vh;
     width: 100%;
-    height: 30vh;
+    min-height: 40vh;
 }
 #moderation .moderation_content .inner_content{
     border-color: red;
     border-width: 0.3vh;
     border-radius: 2vh;
     border-style: solid;
-    width: 40%;
-    position: absolute;
+    width: 50%;
+    position: relative;
+    margin-top: 5vh;
     padding: 1vw;
+    font-size: 1.2vw;
 }
 #moderation .moderation_content .inner_content h3{
     /* nice highlighter effect thanks to https://stackoverflow.com/questions/33451683/pen-highlighter-effect-in-css ! */ 
     color: rgb(51, 50, 50);
     font-weight: bolder;
     background: linear-gradient(104deg, rgba(130, 255, 173,0) 0.9%, rgba(130, 255, 173,1.25) 2.4%, rgba(130, 255, 173,0.5) 5.8%, rgba(130, 255, 173,0.1) 93%, rgba(130, 255, 173,0.7) 96%, rgba(130, 255, 1732,0) 98%), linear-gradient(183deg, rgba(130, 255, 173,0) 0%, rgba(130, 255, 173,0.3) 7.9%, rgba(130, 255, 173,0) 15%);
-    padding: 1.3vh 0.7vw;
+    padding: 1.3vh 0.7vw 1.5vh 0.7vw;
     border-radius: 3vh;
-    width: 7vw;
+    width: 10vw;
     text-shadow: -12px 12px 9.8px rgba(130, 255, 174, 0.781), 21px -18.1px 7.3px rgba(255, 255, 255,1), -18.1px -27.3px 30px rgba(255, 255, 255,1);
 }
 #moderation .moderation_content img{
-    position: absolute;
-    max-height: 30vh;
+    position: relative;
+    max-height: 35vh;
+    max-width: 25vw;
 }
 #moderation .moderation_content#owner .inner_content{
-    left: 20vw;
-    top: 20vh;
+    float: right;
+    margin-right: 4vw;
+    margin-top: 0vh;
+    width: 50%;
 }
 #moderation .moderation_content#owner img{
-    top: 15vh;
-    left: 0;
+    float: left;
 }
 #moderation .moderation_content#mods .inner_content{
-    right: 23vw;
-    top: 50vh;
+    float: left;
+    margin-left: 2vw;
+    margin-top: -0.4vh;
+    width: 60%;
 }
 #moderation .moderation_content#mods img{
-    top: 35vh;
-    right: 0;
+    float: right;
+}
+/* >> moderation styling */
+
+/* >> wrapper styling */
+
+
+
+
+/* << aktuelles styling */
+#aktuelles_wrapper{
+    min-height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+#aktuelles_wrapper h3#aktuelles_title{
+    padding: 16vh 1vw 5vh 1vw;
+    font-size: 4vw;
+    text-align: center;
+    color: white;
+}
+/* inside div */
+#aktuelles_wrapper #aktuelles{
+    position: relative;
+    /*background: rgba(41, 40, 40, 0.589);*/
+    border: 0.5vh rgba(255, 255, 255, 0.541) solid;
+    box-shadow: 0.5vh 1vh 1vh rgba(255, 255, 255, 0.548);
+    border-radius: 20px;
+    width: 60vw;
+    height: 60vh;
+    margin: 0 auto 20vh auto;
+}
+#aktuelles_wrapper #aktuelles .news_slides img{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    top: 0; left: 0;
+}
+/* << left and right button */
+#aktuelles_wrapper #aktuelles .slide_button{
+    display: block;
+    position: absolute;
+    width: 3vw;
+    background-color: rgba(245, 245, 245, 0.555);
+    border-radius: 10px;
+    /* position in middle (vertically) */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    opacity: 0.7;
+    cursor: pointer;
+    border: red 0.1vw solid;
+}
+#aktuelles_wrapper #aktuelles .slide_button:hover{
+    opacity: 1;
+    background-color: rgba(245, 245, 245, 1);
+}
+#aktuelles_wrapper #aktuelles .slide_button img{
+    position: relative;
+    width: 3vw;
+    user-select: none;
+}
+#aktuelles_wrapper #aktuelles .slide_button#slide_left{
+    margin-right: 1vw;
+}
+#aktuelles_wrapper #aktuelles .slide_button#slide_right{
+    right: 0.1vw;
+}
+/* >> left and right button */
+/* << shown or hidden */
+#aktuelles_wrapper #aktuelles .news_slides.hidden{
+    opacity: 0;
+}
+#aktuelles_wrapper #aktuelles .news_slides.hidden img{
+    opacity: 0;
+}
+#aktuelles_wrapper #aktuelles .news_slides.shown{
+    opacity: 1;
+}
+#aktuelles_wrapper #aktuelles .news_slides.shown img{
+    opacity: 1;
+}
+
+/* >> shown or hidden */
+/* actual styling */
+#aktuelles_wrapper #aktuelles .news_slides{
+    /* pass */
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+#aktuelles_wrapper #aktuelles .news_slides .content{
+    position: absolute;
+    width: 60%;
+    text-align: justify;
+    color: rgba(245, 245, 245, 0.849);
+    background-color: rgba(47, 79, 79, 0.883);
+    padding: 2vh 1vw;
+    border-radius: 2vh;
+
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#aktuelles_wrapper #aktuelles .news_slides .content h3{
+    text-align: center;
+}
+/* >> aktuelles */
+
+
+
+
+/* << join now */
+#join{
+    margin: auto;
+    height: 40vh;
+    margin-bottom: 10vh;
+    background-image: linear-gradient(45deg, #654ea3, #eaafc8); 	
+    transform: skewY(-6deg);
+    border-top: 1vh white solid;
+    border-bottom: 1vh white solid;
+}
+#join .content{
+    width: 40vw;
+    margin: auto;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    transform: skewY(6deg);
+    color: white;
+    text-align: center;
+    line-height: 250%;
+}
+#join .content h3{
+    font-size: 3vw;
+}
+#join .content .join_now_highlight{
+    font-size: 2vw;
+    position: relative;
+}
+#join .content .join_now_highlight::after{
+    position: absolute;
+    content: "";
+    bottom: 0vh;
+    right: 50%;
+    transform: translateX(55%);
+    background: red;
+    /* rainbow gradient fgoud on https://codepen.io/cssparadise/full/ExxayxM */
+    background: linear-gradient(110deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
+    height: 0.5vh;
+    width: 93%;
+    transition: height 0.3s;
+    z-index: -1;
+}
+#join .content .join_now_highlight:hover:after{
+    transition: height 0.3s;
+    height: 1.3vh;
 }
