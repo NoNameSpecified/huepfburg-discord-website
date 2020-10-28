@@ -20,7 +20,7 @@ function resizeNavOnScroll(wishedTrigger, nav_id){
         if ( (window.scrollY) >= wishedTrigger) {
             header_nav.style.transition = "0.5s";
             header_nav.style.maxHeight = "10vh";
-            header_nav.style.backgroundColor = "rgb(36, 37, 42, 0.99)";
+            header_nav.style.backgroundColor = "rgba(36, 37, 42, 0.99)";
             
             // change hover color of title, as else it looks weird on dark background
             header_title.style.color = smoked_white;
@@ -61,9 +61,11 @@ function resizeNavOnScroll(wishedTrigger, nav_id){
             header_nav.style.backgroundColor = "rgba(0, 0, 0, 0)"; // color doesnt matter, just make it transparent (last 0)
             
             // change hover color of title back to usual on white bg
+            
             header_title.style.color = nav_first_color;
-            header_title.onmouseenter = function(){ header_title.style.color = "rgba(0, 0, 0, 0.705)";}
-            header_title.onmouseleave = function(){ header_title.style.color = nav_first_color;}
+            /*header_title.onmouseenter = function(){ header_title.style.color = "rgba(0, 0, 0, 0.705)";}
+            header_title.onmouseleave = function(){ header_title.style.color = nav_first_color;} 
+            */
             // change highlight hover style back to usual
             header_highlight.onmouseenter = function(){ 
                 header_highlight.style.backgroundColor = "rgba(236, 55, 55, 0.877)";
@@ -91,88 +93,154 @@ function resizeNavOnScroll(wishedTrigger, nav_id){
 }
 
 
+
+
 // for the aufbau_section, clicking a div expands the collapsed and shows content
 function showCollapsed() {
 
-    // this bit is really important as we need to wait for the page
-    // to be fully loaded, else this executes before DOM is loaded 
-    window.onload = function(){
+    var rollen_div = document.getElementById("rollen");
+    var channels_div = document.getElementById("channels");
+    var rang_div = document.getElementById("rang");
 
-        var rollen_div = document.getElementById("rollen");
-        var channels_div = document.getElementById("channels");
-        var rang_div = document.getElementById("rang");
+    // first time for "Die Rollen"
 
-        // first time for "Die Rollen"
+    var banner_to_click = document.getElementById("top_span_rollen");
+    // when clicking that "banner", execute : 
+    banner_to_click.addEventListener("click", function(){
+        console.log("clicked");
+        // get the div we want to show later
+        var content = document.getElementById("content_collapsed_rollen");
+        // if we are still collapsed
+        if ( content.className == "content collapsed" ) {
+            // remove the class "collapsed", add the class "flow"
+            content.className = "content flow";
+            // change padding, space in between would be too big else
+            channels_div.style.padding = "2vh 20% 5vh 20%";
+            
+            // change the button from a + to a - sign
+            document.getElementById("expand_button_rollen").src = 'img/section_aufbau/reduce_button.png';
+        // if we are not collapsed and content is shown
+        } else {
+            
+            // remove flow class, add collapsed again
+            content.className = "content collapsed";
+            // reset padding
+            channels_div.style.padding = "5vh 20%";
+            // takes roughly 0.8s to move all the stuff
+            // the - to + img change should happen last,
+            // thus, timeout
+            setTimeout(function(){
+                document.getElementById("expand_button_rollen").src = 'img/section_aufbau/expand_button.png';
+            },1);
+        }
+    });
 
-        var banner_to_click = document.getElementById("top_span_rollen");
-        // when clicking that "banner", execute : 
-        banner_to_click.addEventListener("click", function(){
-            // get the div we want to show later
-            var content = document.getElementById("content_collapsed_rollen");
-            // if we are still collapsed
-            if ( content.className == "content collapsed" ) {
-                // remove the class "collapsed", add the class "flow"
-                content.className = "content flow";
-                // change padding, space in between would be too big else
-                channels_div.style.padding = "2vh 20% 5vh 20%";
-                
-                // change the button from a + to a - sign
-                document.getElementById("expand_button_rollen").src = 'img/section_aufbau/reduce_button.png';
-            // if we are not collapsed and content is shown
-            } else {
-                
-                // remove flow class, add collapsed again
-                content.className = "content collapsed";
-                // reset padding
-                channels_div.style.padding = "5vh 20%";
-                // takes roughly 0.8s to move all the stuff
-                // the - to + img change should happen last,
-                // thus, timeout
-                setTimeout(function(){
-                    document.getElementById("expand_button_rollen").src = 'img/section_aufbau/expand_button.png';
-                },1);
+
+    /* working as defined above, use those comments */
+
+    // second Time for "Die Channels"
+    var banner_to_click = document.getElementById("top_span_channels");
+    banner_to_click.addEventListener("click", function(){
+        var content = document.getElementById("content_collapsed_channels");
+
+        if ( content.className == "content collapsed" ) {
+            content.className = "content flow";
+            rang_div.style.padding = "2vh 20% 5vh 20%";
+            document.getElementById("expand_button_channels").src = 'img/section_aufbau/reduce_button.png';
+        } else {
+            content.className = "content collapsed";
+            rang_div.style.padding = "5vh 20%";
+            setTimeout(function(){
+                document.getElementById("expand_button_channels").src = 'img/section_aufbau/expand_button.png';
+            },1);
+        }
+    });
+
+
+    // third time for "Das Rang-System"
+    var banner_to_click = document.getElementById("top_span_rang");
+    banner_to_click.addEventListener("click", function(){
+        var content = document.getElementById("content_collapsed_rang");
+
+        if ( content.className == "content collapsed" ) {
+            content.className = "content flow";
+            rang_div.style.padding = "5vh 20% 2vh 20%";
+            document.getElementById("expand_button_rang").src = 'img/section_aufbau/reduce_button.png';
+        } else {
+            content.className = "content collapsed";
+            rang_div.style.padding = "5vh 20%";
+            setTimeout(function(){
+                document.getElementById("expand_button_rang").src = 'img/section_aufbau/expand_button.png';
+            },1);
+        }
+    });
+
+}
+
+
+
+
+// function to slide the different news
+function slideNews(){
+
+    // click slide_left button
+    var button_left = document.getElementById("slide_left");
+    button_left.addEventListener("click", function(){
+
+        // the different news
+        var news = document.getElementsByClassName("news_slides")
+        console.log(news)
+
+        for(var i = 0; i < news.length; i++){
+            slide = news[i];
+            if( slide.className == "news_slides shown" ){
+                current_slide = slide;
+                break;
             }
-        });
+        }
+        
+        console.log("GOOOOOOOOOOOOOOOOOOOOOOOTTEM\n\n")
 
+        current_slide.className = "news_slides hidden";
 
-        /* working as defined above, use those comments */
+        // if we are at the first one
+        if (typeof news[i-1] === "undefined"){
+            // go to last element
+            index = news.length - 1;
+        }else{
+            index = i-1;
+        }
+        console.log(index)
+        news[index].className = "news_slides shown";
+    });
 
-        // second Time for "Die Channels"
-        var banner_to_click = document.getElementById("top_span_channels");
-        banner_to_click.addEventListener("click", function(){
-            var content = document.getElementById("content_collapsed_channels");
+    // click slide_right button
+    var button_right = document.getElementById("slide_right");
+    button_right.addEventListener("click", function(){
+        
+        // the different news
+        var news = document.getElementsByClassName("news_slides")
+        console.log(news)
 
-            if ( content.className == "content collapsed" ) {
-                content.className = "content flow";
-                rang_div.style.padding = "2vh 20% 5vh 20%";
-                document.getElementById("expand_button_channels").src = 'img/section_aufbau/reduce_button.png';
-            } else {
-                content.className = "content collapsed";
-                rang_div.style.padding = "5vh 20%";
-                setTimeout(function(){
-                    document.getElementById("expand_button_channels").src = 'img/section_aufbau/expand_button.png';
-                },1);
+        for(var i = 0; i < news.length; i++){
+            slide = news[i];
+            if( slide.className == "news_slides shown" ){
+                current_slide = slide;
+                break;
             }
-        });
+        }
 
+        current_slide.className = "news_slides hidden";
 
-        // third time for "Das Rang-System"
-        var banner_to_click = document.getElementById("top_span_rang");
-        banner_to_click.addEventListener("click", function(){
-            var content = document.getElementById("content_collapsed_rang");
+        // if we are at the first one
+        if (typeof news[i+1] === "undefined"){
+            // go to last element
+            index = 0;
+            console.log(index)
+        }else{
+            index = i+1;
+        }
+        news[index].className = "news_slides shown";        
+    });
 
-            if ( content.className == "content collapsed" ) {
-                content.className = "content flow";
-                rang_div.style.padding = "5vh 20% 2vh 20%";
-                document.getElementById("expand_button_rang").src = 'img/section_aufbau/reduce_button.png';
-            } else {
-                content.className = "content collapsed";
-                rang_div.style.padding = "5vh 20%";
-                setTimeout(function(){
-                    document.getElementById("expand_button_rang").src = 'img/section_aufbau/expand_button.png';
-                },1);
-            }
-        });
-
-    }
 }
