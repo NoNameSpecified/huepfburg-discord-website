@@ -20,9 +20,20 @@
 
     <!-- script temporarly stored here -->
     <script>
-        // parameters = pixelscroll, id of nav to change
-        resizeNavOnScroll(100, "main_nav");
-        showCollapsed();
+
+        // this bit is really important as we need to wait for the page
+        // to be fully loaded, else this executes before DOM is loaded
+        // (and we cant access elements etc)
+        window.onload = function(){
+            // parameters = pixelscroll, id of nav to change
+            resizeNavOnScroll(100, "main_nav");
+            // for the struktur section
+            showCollapsed();
+            // for aktuelles section
+            slideNews();
+            console.log("loaded")
+        }
+        
     </script>
 
     <!-- header will be shown on top with nav etc -->
@@ -51,6 +62,3 @@
             </ul>
         </nav>
     </header>
-    <!--
-        Rest of the Code in the index.php
-    -->
