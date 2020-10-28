@@ -1,2 +1,4 @@
 ## huepfburg
-A website about the german community server hüpfburg by kendrik
+A small website by kendrik about the german community server hüpfburg 
+
+code is in src/
