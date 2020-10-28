@@ -1,7 +1,2 @@
 ## huepfburg
-Crashy Website
-Still getting built
-
-## todo :
-- build up the different sections 
-- add mee6 best list (...=more)
+A website about the german community server hüpfburg by kendrik
