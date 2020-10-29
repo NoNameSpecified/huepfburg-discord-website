@@ -143,7 +143,7 @@
             <div class="content collapsed" id="content_collapsed_rang">
             <img src="img/section_aufbau/raenge.png" alt="ränge" title="Die Ranghierarchie mit entsprechenden Levels">
                 <p>Um Mitglieder für ihre Aktivität zu belohnen und zu differenzieren, wer wie lange schon auf dem Server bzw. wie intensiv
-                     er dort aktiv ist, gibt es verschiedene Ränge, die durch mee6-levels definiert sind.. Probanden (lvl. 6 >) können Kanäle
+                     er dort aktiv ist, gibt es verschiedene Ränge, die durch mee6-levels definiert sind.. Probanden (lvl. 6 <) können Kanäle
                      mit privaten Inhalten (wie bspw. den Kanal für Selfies) nicht sehen. Diese werden allerdings freigeschaltet,
                      sobald man den Rang "proven" bzw. Level 6 erreicht hat.
                     <br><span style="text-align: left;">Anhand dieser Rangrollen werden User in der Server - Mitgliederliste rechts sortiert: 
