@@ -1,4 +1,10 @@
 
+
+/* MOBILE FIRST STYLING 
+    retakes style from style.css with a few changes
+*/
+
+
 /* << general styling */
 /*:root{
      not used for now 
@@ -19,19 +25,19 @@
 
 /* links */
 #aufbau #struktur_link{
-    position: absolute; top: -10.3vh;
+    position: absolute; top: -10vh;
 }
 #geschichte #geschichte_link{
-    position: absolute; top: -10.3vh;
+    position: absolute; top: -10vh;
 }
 #moderation #moderation_link{
-    position: absolute; top: -10.3vh;
+    position: absolute; top: -10vh;
 }
 #aktuelles_wrapper #aktuelles_link{
-    position: absolute; top: 1.3vh;
+    position: absolute; top: -3vh;
 }
 #join #join_link{
-    position: absolute; top: 1.3vh;
+    position: absolute; top: 0vh;
 }
 
 * {
@@ -66,54 +72,54 @@ img:not(.expand_button){
 header {
     z-index: 99;
     /* if on mobile, change*/
-    max-height: 30vh;
+    max-height: 140vh;
     width: 100%;
     position: fixed;
-    /*background-color: rgba(117, 108, 108, 0.246);*/
+    background-color: rgba(29, 28, 28, 0.98);
     border-bottom-color: rgba(0, 0, 0, 1);
-    border-bottom-width: 0 0 0.3vh;
+    border-bottom-width: 0 0 1vh;
     border-bottom-style: solid;
 }
 header nav{
-    color: rgb(245, 222, 179);
-    display: flex;
+    color: rgba(255, 255, 255, 0.692);
+    display: block;
     width: 100%;
     justify-content: center;
     align-items: center;
     font-family: "overpass";
-    max-height: 30vh;
+    max-height: 140vh;
     position: relative;
 }
 /* title left of nav */
 header nav .nav_title {
-    display: inline-flex;
-    margin: 4vh 5vw 1vw -5vw;
+    color: rgb(255, 182, 193);
+    display: inline-block;
+    /*margin: 2vh 5vw 1vw -5vw;*/
     align-items: center;
-    max-width: 50%;
-    font-size: 2.5vw;
+    width: 100%;
+    font-size: 4vh;
+    padding: 2vh 2vw 0vh 20vw;
     /*cursor: default;
     -- edited : now will link to top, removing "home" button
     and adding another one in replacement */
     position: relative;
 }
-header nav .nav_title #mobile_burger_icon{
-    display: none;
+header nav .nav_title #nav_h3{
+    float: left;
 }
-header nav .nav_title h3:hover{
-    transform: scale(1.15);
-    color: rgb(255, 182, 193);
-    /* to be determined
-    background-color: rgb(241, 233, 221);
-    border-radius: 30px;*/
+header nav .nav_title #mobile_burger_icon{
+    float: right;
+    padding-right: 3vw;
+    font-size: 5vh;
 }
 header nav .nav_title img{
-    max-height: 8vh;
-    max-width: 6.5vw;
+    max-height: 20vh;
+    max-width: 20vw;
     position: absolute;
     /*where it will be placed : left: -35%;
     hidden at first : */
-    left: -130vw;
-    top: -1vh;
+    left: -2%;
+    top: 0.5vh;
     /*display: none;*/
     transition: 1s;
     pointer-events: none;
@@ -121,17 +127,19 @@ header nav .nav_title img{
 
 /* actual nav */
 header nav ul{
-    display: inline-flex;
-    flex-direction: row;
-    margin: 3vh 1vw 1vw 7%;
-    align-items: center;
+    display: block;
+    max-height: 0vh;
+    overflow: hidden;
+    transition: 0.5s;
 }
 header nav ul li{
     /* some of this already styled in general styling */
-    margin: 0 4% 0 4%;
-    font-size: 1.75vw;
+    margin: 0 4% 1vh -4vw;
+    font-size: 3.5vh;
     transition: 0.1s;
     position: relative;
+    display: block;
+    width: 100%;
 }
 header nav ul li:after{
     position: absolute;
@@ -145,31 +153,19 @@ header nav ul li:after{
     transform: scaleX(0);
     transform-origin: right;
 }
-header nav ul li:hover:after{
-    transform: scaleX(1);
-    transform-origin: left;
+header nav ul li a{
+    border-top: 0.1vh gray solid;
+    padding-top: 1vh;
+    display: inline-block;
+    width: 100%;
 }
-#nav_highlight {
+#nav_highlight_mobile {
     background-color: rgba(236, 55, 55, 0.685);
-    color: rgba(230, 197, 197, 0.877);
-    padding: 0.3vw 0.4vw 0 0.3vw;
+    color: rgb(255, 255, 255);
+    padding: 1vh 2vw;
     border-radius: 1vh;
-    transition: color 0.6s;
-    transition: background-color 0.6s;
-    transition: transform 0.4s;
     box-shadow: 0.3vh 0.5vh 0.3vh rgba(236, 55, 55, 0.5);
-}
-#nav_highlight:hover{
-    background-color: rgba(236, 55, 55, 0.877);
-    color: rgb(255, 224, 224);
-    transition: color 0.6s;
-    transition: background-color 0.8s;
-    transition: transform 0.4s;
-    transform: translateY(-0.4vh);
-}
-/* dont do the underline thing for highlight */
-header nav ul li#nav_highlight:hover:after{
-    content: none;
+    width: 100%;
 }
 header nav ul li#nav_highlight:after{
     content: none;
@@ -181,13 +177,13 @@ header nav ul li#nav_highlight:after{
 /* << showcase styling */
 #showcase{
     position: relative;
-    height: 100vh;
+    height: 95vh;
     /*background-color: rgba(30, 103, 221, 0.637);
     bg-gradient from https://www.eggradients.com/category/blue-gradient 
     background-color: #ff4e00; 
     background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%); */
 
-    background-image: url("../img/showcase/discord_logo.png");
+    background-image: url("../img/showcase/discord_logo_mobile_2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: center;
@@ -196,31 +192,30 @@ header nav ul li#nav_highlight:after{
 }
 #showcase #showcase_title{
     position: absolute;
-    display: inline-block;
-    top: 45vh;
-    width: 45vw;
-    left: 5%;
+    display: block;
+    bottom: 5vh;
+    margin: 0;
+    max-width: 100vw;
     color: rgba(245, 245, 245, 0.89);
-    background-color: rgba(24, 23, 23, 0.835);
-    padding: 1vw;
+    background-color: rgba(24, 23, 23, 0.747);
+    padding: 3vw;
 }
 #showcase #showcase_title h1{
-    font-size: 6vw;
-    max-width: 50vw;
+    font-size: 7vh;
     font-family: "simplifica";
 }
-#showcase #showcase_title p{
-    line-height: 3.3vh;
-    font-size: 1.2vw;
-}
 #showcase #showcase_title img{
-    width: 6vw;
+    width: 11vh;
     height: auto;
     display: inline;
     position: absolute;
-    left: 60%;
-    top: 35%;
+    left: 55%;
+    top: 15%;
     pointer-events: none;
+}
+#showcase #showcase_title p{
+    line-height: 150%;
+    font-size: 2.3vh;
 }
 
 /* >> showcase styling */
@@ -232,15 +227,15 @@ header nav ul li#nav_highlight:after{
 #aufbau{
     max-width: 100vw;
     position: relative;
-    min-height: 90vh;
+    min-height: 100vh;
     /* moved to body{} 
     background-color: #201c29; */
     color: rgba(251, 251, 251, 0.705);
     z-index: 2;
 }
 #aufbau h3#aufbau_title{
-    padding: 4vh 1vw 0 1vw;
-    font-size: 4vw;
+    padding: 5vh 1vw 0 1vw;
+    font-size: 5vh;
     text-align: center;
     color: white;
 }
@@ -248,7 +243,7 @@ header nav ul li#nav_highlight:after{
 #aufbau .collapse_div{
     position: relative;
     display: block;
-    padding: 5vh 20%;
+    padding: 6vh 5%;
 }
 /* 1st one a bit more tho */
 #aufbau .collapse_div#rollen{
@@ -257,29 +252,22 @@ header nav ul li#nav_highlight:after{
 /* ## styling expand/reduce span */
 #aufbau .top_span{
     cursor: pointer;
-    border-top: 0.5vh gray solid;
-    border-bottom: 0.5vh gray solid;
+    border-top: 0.2vh gray solid;
+    border-bottom: 0.2vh gray solid;
     position: relative;
     padding: 2% 0 2% 0;
 }
 #aufbau .collapse_div .top_span h3{
-    font-size: 1.5vw;
+    font-size: 3vh;
     top: 50%;
     transition: 0.3s;
-}
-#aufbau .collapse_div .top_span:hover > h3{
-    transition: 0.3s;
-    color: rgb(255, 255, 255);
 }
 #aufbau .collapse_div .top_span img{
     box-sizing: border-box;
     position: absolute;
-    width: 2.6vw;
+    width: 3.5vh;
     right: 0%;
-    top: 20%;
-    opacity: 0.7;
-}
-#aufbau .collapse_div .top_span:hover > img{
+    top: 10%;
     opacity: 1;
 }
 /* ## styling actual content div bascis */
@@ -288,7 +276,7 @@ header nav ul li#nav_highlight:after{
     overflow: hidden;
     /* general styling */
     line-height: 164%;
-    font-size: 1.1vw;
+    font-size: 2.3vh;
     background-color: rgba(255, 255, 255, 0.76);
     border-radius: 10px;
     color: black;
@@ -314,7 +302,7 @@ header nav ul li#nav_highlight:after{
     height: auto;
 }
 #aufbau .collapse_div .content.flow{
-    max-height: 300vh;
+    max-height: 500vh;
     transition: 0s;
     padding: 2.5vw;
     padding-bottom: 3vh;
@@ -331,10 +319,8 @@ header nav ul li#nav_highlight:after{
     text-align: justify;
 }
 #aufbau #rollen .content img{
-    float: right;
-    width: 25vw;
-    margin: 0.5vw; 
-    margin-left: 1.5vw;
+    width: 100%;
+    margin: 0.5vw;
 }
 
 #aufbau #channels{
@@ -351,9 +337,10 @@ header nav ul li#nav_highlight:after{
 #aufbau #channels ul li:nth-child(-n+3){
 }*/
 #aufbau #channels .content img{
-    margin: 0.5vw 1.8vw 1.8vw 0.5vw; 
-    width: 22vw;
-    float: left;
+    max-height: 50vh;
+    max-width: 50vh;
+    display: block;
+    margin: 0.5vw auto 1.8vw auto; 
 }
 
 #aufbau #rang{
@@ -362,12 +349,12 @@ header nav ul li#nav_highlight:after{
 #aufbau #rang .content p{
     text-align: justify;
     padding-top: 5%;
-    width: 60%;
 }
 #aufbau #rang .content img{
-    float: right;
-    width: 15vw;
-    margin: 0.5vw 0.5vw 1.8vw 1.8vw; 
+    max-height: 50vh;
+    max-width: 50vh;
+    display: block;
+    margin: 0.5vw auto 1.8vw auto; 
 }
 /* >> aufbau styling */
 
@@ -387,30 +374,31 @@ hr#hr_middle{
 }
 #combo_wrapper h3.wrapper_part_title{ 
     text-align: center;
-    font-size: 2vw;
-    padding-top: 6vh;
+    font-size: 4vh;
+    padding-top: 2vh;
     position: relative;
     text-shadow: 0.3vh 0.3vh white;
 }
 #inside_wrapper{
+    border-top: 1vh solid rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.76);
     color: rgb(34, 32, 32);
     position: relative;
-    margin: 1vh 10vw;
-    padding: 5vh 5vw;
+    padding: 2vw 1vw;
     min-height: 90vh;
-    border-radius: 20px;
+    border-radius: 3;
 }
 /* >> geschichte styling */
 #geschichte{
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
 }
 #geschichte .geschichte_content .inside_content .inner_content_content{
     text-align: left;
     padding: 5vh 0 15vh 0;
-    font-size: 1.3vw;
+    font-size: 2.5vh;
     line-height: 180%;
+    text-align: justify;
 } 
 #geschichte .geschichte_content .inside_content .inner_content_content h3{
     text-decoration: underline;
@@ -420,59 +408,69 @@ hr#hr_middle{
 /* << moderation styling */
 #moderation{
     position: relative;
+    width: 90%;
+    margin: 0 auto;
 }
 h3#moderation_title{
     padding-top: 5vh;
     padding-bottom: 4vh;
 }
 #moderation .moderation_content{
-    line-height: 3vh;
+    line-height: 180%;
     width: 100%;
     min-height: 40vh;
 }
 #moderation .moderation_content .inner_content{
-    border-color: red;
-    border-width: 0.3vh;
-    border-radius: 2vh;
-    border-style: solid;
-    width: 50%;
+    width: 100%;
     position: relative;
     margin-top: 5vh;
     padding: 1vw;
-    font-size: 1.2vw;
+    font-size: 2.5vh;
 }
 #moderation .moderation_content .inner_content h3{
     /* nice highlighter effect thanks to https://stackoverflow.com/questions/33451683/pen-highlighter-effect-in-css ! */ 
     color: rgb(51, 50, 50);
+    text-align: center;
+    margin: 0 auto;
     font-weight: bolder;
     background: linear-gradient(104deg, rgba(130, 255, 173,0) 0.9%, rgba(130, 255, 173,1.25) 2.4%, rgba(130, 255, 173,0.5) 5.8%, rgba(130, 255, 173,0.1) 93%, rgba(130, 255, 173,0.7) 96%, rgba(130, 255, 1732,0) 98%), linear-gradient(183deg, rgba(130, 255, 173,0) 0%, rgba(130, 255, 173,0.3) 7.9%, rgba(130, 255, 173,0) 15%);
     padding: 1.3vh 0.7vw 1.5vh 0.7vw;
     border-radius: 3vh;
-    width: 12vw;
+    width: 50vw;
     text-shadow: -12px 12px 9.8px rgba(130, 255, 174, 0.781), 21px -18.1px 7.3px rgba(255, 255, 255,1), -18.1px -27.3px 30px rgba(255, 255, 255,1);
 }
 #moderation .moderation_content img{
     position: relative;
-    max-height: 35vh;
-    max-width: 25vw;
+    max-height: 30vh;
+    max-width: 100vw;
+    display: block;
+    margin: auto;
+    padding-bottom: 3vh;
 }
 #moderation .moderation_content#owner .inner_content{
-    float: right;
-    margin-right: 4vw;
-    margin-top: 0vh;
-    width: 50%;
+    display: block;
+    margin: auto;
+    width: 100%;
+    border-bottom: 0.3vh red solid;
 }
 #moderation .moderation_content#owner img{
-    float: left;
+    max-height: 30vh;
+    display: block;
+    margin: auto;
+    padding-bottom: 3vh;
 }
 #moderation .moderation_content#mods .inner_content{
-    float: left;
-    margin-left: 2vw;
-    margin-top: -0.4vh;
-    width: 60%;
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+span#mods_mobile{
+    margin-top: -6vh;
+    display: block;
+    margin: auto;
 }
 #moderation .moderation_content#mods img{
-    float: right;
+    margin-top: 5vh;
 }
 /* >> moderation styling */
 
@@ -483,13 +481,14 @@ h3#moderation_title{
 
 /* << aktuelles styling */
 #aktuelles_wrapper{
-    min-height: 70vh;
+    min-height: 107vh;
     position: relative;
     overflow: hidden;
 }
 #aktuelles_wrapper h3#aktuelles_title{
-    padding: 16vh 1vw 5vh 1vw;
-    font-size: 4vw;
+    border-top: 0.5vh red solid;
+    padding: 10vh 1vw 5vh 1vw;
+    font-size: 6vh;
     text-align: center;
     color: white;
 }
@@ -500,8 +499,8 @@ h3#moderation_title{
     border: 0.5vh rgba(255, 255, 255, 0.541) solid;
     box-shadow: 0.5vh 1vh 1vh rgba(255, 255, 255, 0.548);
     border-radius: 20px;
-    width: 60vw;
-    height: 60vh;
+    width: 100vw;
+    min-height: 40vh;
     margin: 0 auto 20vh auto;
 }
 #aktuelles_wrapper #aktuelles .news_slides img{
@@ -516,24 +515,20 @@ h3#moderation_title{
 #aktuelles_wrapper #aktuelles .slide_button{
     display: block;
     position: absolute;
-    width: 3vw;
+    width: 10vw;
     background-color: rgba(245, 245, 245, 0.555);
     border-radius: 10px;
     /* position in middle (vertically) */
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
-    opacity: 0.7;
+    opacity: 1;
     cursor: pointer;
     border: red 0.1vw solid;
 }
-#aktuelles_wrapper #aktuelles .slide_button:hover{
-    opacity: 1;
-    background-color: rgba(245, 245, 245, 1);
-}
 #aktuelles_wrapper #aktuelles .slide_button img{
     position: relative;
-    width: 3vw;
+    width: 10vw;
     user-select: none;
 }
 #aktuelles_wrapper #aktuelles .slide_button#slide_left{
@@ -567,16 +562,17 @@ h3#moderation_title{
 }
 #aktuelles_wrapper #aktuelles .news_slides .content{
     position: absolute;
-    width: 60%;
+    width: 100%;
     text-align: justify;
     color: rgba(245, 245, 245, 0.849);
     background-color: rgba(47, 79, 79, 0.883);
     padding: 1vh 1vw;
     border-radius: 2vh;
-    font-size: 1vw;
-    bottom: 2vh;
+    font-size: 2.5vh;
+    top: 40vh;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
 }
 #aktuelles_wrapper #aktuelles .news_slides .content h3{
     text-align: center;
@@ -589,7 +585,8 @@ h3#moderation_title{
 /* << join now */
 #join{
     margin: auto;
-    height: 50vh;
+    margin-top: 6vh;
+    height: 80vh;
     margin-bottom: 10vh;
     background-image: linear-gradient(45deg, #654ea3, #eaafc8); 	
     transform: skewY(-6deg);
@@ -597,20 +594,21 @@ h3#moderation_title{
     border-bottom: 1vh white solid;
 }
 #join .content{
-    width: 40vw;
+    width: 100%;
     margin: auto;
     padding-top: 10vh;
     padding-bottom: 10vh;
     transform: skewY(6deg);
     color: white;
     text-align: center;
-    line-height: 5vh;
+    line-height: 6vh;
 }
 #join .content h3{
-    font-size: 3vw;
+    line-height: 10vh;
+    font-size: 7vh;
 }
 #join .content .join_now_highlight{
-    font-size: 2vw;
+    font-size: 5vh;
     position: relative;
 }
 #join .content .join_now_highlight::after{
@@ -622,13 +620,12 @@ h3#moderation_title{
     background: red;
     /* rainbow gradient fgoud on https://codepen.io/cssparadise/full/ExxayxM */
     background: linear-gradient(110deg, #e1f549, #29d0be, #6cb8ea, #ff5959);
-    height: 0.5vh;
+    height: 1.3vh;
     width: 93%;
     transition: height 0.3s;
     z-index: -1;
 }
-#join .content .join_now_highlight:hover:after{
-    transition: height 0.3s;
-    height: 1.3vh;
+#join .content #website_info{
+    font-size: 3vh;
 }
 /* >> join now */

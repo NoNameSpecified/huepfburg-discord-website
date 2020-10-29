@@ -1,4 +1,3 @@
-
 // if scrolling down, make nav thinner, elements smaller
 function resizeNavOnScroll(wishedTrigger, nav_id){
 
