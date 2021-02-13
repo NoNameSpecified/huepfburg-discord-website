@@ -64,6 +64,7 @@
             // for aktuelles section
             slideNews();
             console.log("loaded")
+            alert("The creator of this website is no longer on the server and the website is no longer updated.")
         }
         
     </script>
