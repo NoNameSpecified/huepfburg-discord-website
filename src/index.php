@@ -13,8 +13,13 @@
 -->
 
 <body>
-
-
+       
+    <!-- no webhost ad thing -->
+    <style>
+        [title^='Hosted on free web hosting 000webhost.com. Host your own website for FREE.'] {
+            display: none;
+        }
+    </style>
 
     <!-- 
         Showcase, landing view 
