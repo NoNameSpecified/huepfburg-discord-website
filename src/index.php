@@ -1,6 +1,6 @@
 
 
-<!-- INFO : Complete source code stored at https://github.com/NoNameSpecified/hburg_exercise -->
+<!-- INFO : Complete source code stored at https://github.com/NoNameSpecified/huepfburg-discord-website -->
 
 <!-- 
     ### START OF HEADER.PHP
