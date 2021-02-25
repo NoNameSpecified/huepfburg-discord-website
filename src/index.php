@@ -278,7 +278,7 @@
                     <p>Alle paar Monate wird eine "purge" durchgeführt, um inaktive Mitglieder zu entfernen. Wer in einem bestimmten Zeitraum (mit ping) nicht 
                         durch eine emoji-reaction zu einer Nachricht seine aktive Anwesenheit zeigt, wird gekickt (man kann also wieder joinen). Somit wird versucht,
                         einen aktiven Server beizubehalten und somit auch nicht mit vielen Mitglieder (verglichen mit größeren Servern). <br>
-                        <span id="highlight">Die nächste Purge findet vo­r­aus­sicht­lich Ende November statt.</span>
+                        <span id="highlight">Die nächste Purge findet voraussichtlich Ende November statt.</span>
                     </p>
                 </div>
             </div>
@@ -306,7 +306,7 @@
             <h3>Tritt jetzt dem Server bei :) !</h3>
             <br><span class="join_now_highlight"><a href="https://discord.gg/t8dZj5U" target="_blank">» Discord link</a></span>
             <br><br><span class="join_now_highlight"><a href="https://disboard.org/de/server/601798072741396481" target="_blank">» Disboard Link</a></span>
-            <br><a href="https://github.com/NoNameSpecified/hburg_exercise" target="blank" id="website_info">website info</a>
+            <br><a href="https://github.com/NoNameSpecified/huepfburg-discord-website" target="blank" id="website_info">website info</a>
         </div>
     </div>
 
