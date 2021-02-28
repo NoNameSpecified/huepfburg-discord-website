@@ -64,7 +64,7 @@
             // for aktuelles section
             slideNews();
             console.log("loaded")
-            alert("The creator of this website is no longer on the server and the website is no longer updated.")
+            alert("Ich bin nicht mehr auf dem Server und die Website wird nicht aktualisiert ; trotzdem verschafft sie einen guten Überblick, auch zur Geschichte.")
         }
         
     </script>
