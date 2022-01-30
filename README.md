@@ -1,7 +1,7 @@
 # huepfburg
 A small website by kendrik about the german community server hüpfburg 
 
-The website is hosted by 000webhost and reachable on http://huepfburg-discord.tk
+The website is hosted by 000webhost and reachable on http://huepfburg-discord.tk // edit: not anymore reachable by that URL
 
 code is in src/
 
